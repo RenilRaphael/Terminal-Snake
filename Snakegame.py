@@ -89,6 +89,7 @@ class Renderer():
                         print("After move dir:",snake.dir)
                         applecheck(apple,snake)
                 else:
+                        print("Invalid input")
 def test():
     s=Renderer()
     sk=Snake()
@@ -97,3 +98,4 @@ def test():
 
 
 test()
+
