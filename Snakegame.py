@@ -32,18 +32,13 @@ class Snake():
             return 1
     def grow(self):
         self.length+=1
-    # Use the stored old tail position
         self.bod.append(self._old_tail)
     def move(self,d):
         self.dir=d
-        # Store old tail position before moving
         old_tail = self.bod[-1][:]
-    # Move body segments (tail to head-1)
         for i in range(len(self.bod)-1, 0, -1):
-            self.bod[i] = self.bod[i-1][:]
-    
+            self.bod[i] = self.bod[i-1][:]    
         self.bod[0] = snakemath(self.bod[0], d)
-    # Store old tail for potential growth
         self._old_tail = old_tail
         for i in range(1,self.length):
             if self.bod[0]==self.bod[i]:
@@ -99,5 +94,6 @@ def test():
     sk=Snake()
     a=Apple()
     s.gameplay(sk,a)
+
 
 test()
